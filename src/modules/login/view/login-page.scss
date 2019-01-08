@@ -1,0 +1,73 @@
+@import '~styles/colors';
+
+.LoginPage {
+  padding: 3rem;
+  min-width: 280px;
+  background: $white;
+  color: $gray;
+  font-size: 1rem;
+  box-shadow: 4px 4px 16px 0px rgba(0, 0, 0, 0.15);
+
+  &__title {
+    margin: 0;
+    color: $dark-blue;
+  }
+
+  &__description {
+    margin: 0 0 1rem 0;
+  }
+
+  &__obs {
+    margin: 5px 0;
+    font-size: 0.75rem;
+  }
+
+  &__link {
+    padding-left: 0.25rem;
+    color: $dark-blue;
+    text-decoration: none;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+
+    &-submit {
+      padding: 0.5rem;
+      border: none;
+      background-color: $green;
+      color: $white;
+      font-size: 1.25rem;
+  
+      &:hover {
+        cursor: pointer;
+        background-color: darken($green, 5%);
+      }
+
+      &:disabled {
+        background-color: $gray-3;
+        cursor: not-allowed;
+      }
+    }
+
+    &-control {
+      display: flex;
+      align-items: stretch;
+      flex-direction: column;
+      color: $gray;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    &-input {
+      border: 1px solid $gray-2;
+      padding: 0.5rem;
+      color: $gray-1;
+    }
+
+    &-label {
+      align-self: start;
+      color: $blue;
+    }
+  }
+}
