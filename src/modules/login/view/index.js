@@ -2,6 +2,8 @@ import './login-page.scss';
 
 import React, { Component } from 'react';
 
+import { LoginService } from 'modules/login';
+
 class LoginPage extends Component {
   state = {
     apiKey: '',
@@ -17,14 +19,21 @@ class LoginPage extends Component {
     });
   }
 
+  setLoading(loading) {
+    this.setState({
+      ...this.state,
+      isLoading: loading
+    });
+  }
+
   handleSubmit = (event) => {
     event.preventDefault();
 
-    console.log(this.state);
-    this.setState({
-      ...this.state,
-      isLoading: true
-    });
+    const { clientId, apiKey } = this.state;
+    // this.setLoading(true);
+    
+    LoginService.login(clientId, apiKey);
+
   }
 
   render() {
